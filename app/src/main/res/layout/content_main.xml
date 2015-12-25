@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_main" tools:context=".MainActivity">
+
+    <TextView android:text="Hello World!" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:id="@+id/text"
+        android:gravity="center"/>
+    <top.liborange.joystick.JoyStick
+        android:layout_alignLeft="@id/text"
+        android:id="@+id/joystick"
+        android:layout_alignParentLeft="true"
+        android:layout_width="300dp"
+        android:background="@drawable/road"
+        android:layout_height="match_parent"
+        />
+
+    <EditText
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:id="@+id/ip"
+        android:text="192.168.2.111"
+        android:layout_toRightOf="@+id/joystick"
+        android:layout_alignParentTop="true"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_height="50dp"
+        android:text="Conn"
+        android:id="@+id/conn"
+        android:layout_toRightOf="@+id/ip"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="当前车速为 50 "
+        android:id="@+id/power"
+        android:layout_below="@id/conn"
+        android:layout_alignRight="@id/conn"
+         />
+
+    <Button
+        android:layout_below="@+id/power"
+        android:layout_alignRight="@id/conn"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:text="速度++"
+        android:id="@+id/powerPlus"/>
+
+    <Button
+        android:layout_below="@+id/powerPlus"
+        android:layout_alignRight="@id/conn"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:text="速度--"
+        android:id="@+id/powermin"/>
+
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="当前扭矩为 5 "
+        android:id="@+id/level"
+        android:layout_below="@+id/powermin"
+        android:layout_alignRight="@id/conn"
+        />
+
+    <Button
+        android:layout_below="@+id/level"
+        android:layout_alignRight="@id/conn"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:text="扭矩++"
+        android:id="@+id/levelPlus"/>
+
+    <Button
+        android:layout_below="@+id/levelPlus"
+        android:layout_alignRight="@id/conn"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:text="扭矩--"
+        android:id="@+id/levelmin"/>
+
+    <EditText
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:inputType="number"
+        android:ems="10"
+        android:text="0"
+        android:id="@+id/FL"
+        android:layout_below="@+id/ip"
+        android:layout_alignLeft="@+id/ip"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:inputType="number"
+        android:ems="10"
+        android:text="0"
+        android:id="@+id/FR"
+        android:layout_below="@+id/ip"
+        android:layout_toRightOf="@+id/FL"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:inputType="number"
+        android:ems="10"
+        android:text="0"
+        android:id="@+id/BL"
+        android:layout_below="@+id/ip"
+        android:layout_toRightOf="@+id/FR"
+        android:layout_marginTop="10dp"
+        />
+    <EditText
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:inputType="number"
+        android:ems="10"
+        android:text="0"
+        android:id="@+id/BR"
+        android:layout_below="@+id/ip"
+        android:layout_toRightOf="@+id/BL"
+        android:layout_marginTop="10dp"
+        />
+    <Button
+        android:id="@+id/adjust"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignLeft="@id/ip"
+        android:layout_below="@id/FL"
+        android:layout_marginTop="5dp"
+        android:text="矫正四个车轮（FL,FR,BL,BR）"/>
+
+    <Button
+        android:id="@+id/turnAround"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_toRightOf="@id/joystick"
+        android:layout_below="@id/adjust"
+        android:layout_alignLeft="@id/ip"
+        android:layout_marginTop="10dp"
+        android:text="强力转弯"/>
+
+    <Button
+        android:id="@+id/around"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_toRightOf="@id/turnAround"
+        android:layout_alignTop="@+id/turnAround"
+        android:layout_marginLeft="10dp"
+        android:text="回旋"/>
+
+
+
+
+</RelativeLayout>
